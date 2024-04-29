@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block title %}Boggle!{% endblock %}
+{% block content %}
+<p class="timesPlayed">
+  High Score: {{ highScore }}<br>Times Played: {{ timesPlayed }}
+</p>
+<table class="board">
+    <tbody>
+      {% for row in board %}
+      <tr>
+        {% for cell in row %}
+        <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+<form method="POST" class="form">
+    <input name="word" class="word" autofocus>
+    <button id="submit">Submit</button>
+</form>
+
+<button type="submit" id="restart">Restart Game!</button>
+
+<p class="timer">
+  <!-- our JS will put timer here dynamically -->
+</p>
+
+<p class="score">
+  <!-- our JS will put score here dynamically -->
+</p>
+
+
+
+<p class="msg">
+    <!-- our JS will put messages here dynamically -->
+</p>
+
+<ul class="words">
+    <!-- our JS will add words here as they score -->   
+</ul>
+  
+{% endblock %}
